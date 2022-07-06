@@ -1,3 +1,4 @@
+// models: modelo, uma abstração do mundo real, os dados da aplicação e suas regras de negócio
 // js com letra maiúscula "Negociacao" para dizer que é uma classe
 class Negociacao {
     // constructor para definir os atributos/características da minha negociação

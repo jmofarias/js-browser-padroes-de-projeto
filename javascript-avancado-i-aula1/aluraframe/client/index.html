@@ -11,7 +11,8 @@
     
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <!-- meu form vai ter um evento onsubmit que vai passar o let criado passando o método adiciona(event) -->
+    <form class="form" id="#formulario" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -61,21 +62,10 @@
     </table>
 
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
 
     <script>
-
-        let hoje = new Date();
-
-        // obs: setDate() serve para mudar a data
-        // criando uma instância de negociação; objeto criado a partir da classe negociação
-        let n1 = new Negociacao(hoje, 5, 700);
-
-        console.log(n1.data);
-
-        n1.data.setDate(11);
-
-        console.log(n1.data);
-        
+        let negociacaoController = new NegociacaoController();
     </script>
 
 </body>
