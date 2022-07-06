@@ -60,7 +60,23 @@
         </tfoot>
     </table>
 
-    <script src="./js/index.js"></script>
-    
+    <script src="js/app/models/Negociacao.js"></script>
+
+    <script>
+
+        let hoje = new Date();
+
+        // obs: setDate() serve para mudar a data
+        // criando uma instância de negociação; objeto criado a partir da classe negociação
+        let n1 = new Negociacao(hoje, 5, 700);
+
+        console.log(n1.data);
+
+        n1.data.setDate(11);
+
+        console.log(n1.data);
+        
+    </script>
+
 </body>
 </html>
