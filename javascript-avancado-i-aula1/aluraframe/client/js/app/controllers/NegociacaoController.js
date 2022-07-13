@@ -12,6 +12,10 @@ class NegociacaoController {
         this._inputValor = $('#valor');
         this._form = $('#formulario');
         this._listaNegociacoes = new ListaNegociacoes();
+        this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+
+        // pedindo para a view atualizar com os dados da listaNegociacoes
+        this._negociacoesView.update(this._listaNegociacoes);
     }
     
     adiciona(event) {
@@ -19,6 +23,8 @@ class NegociacaoController {
 
         // adiciona os dados preenchidos no formulário na minha lista de negociações
         this._listaNegociacoes.adiciona(this._criaNegociacao());
+        // quando o meu adiciona é chamado eu peço para a view mostrar o modelo
+        this._negociacoesView.update(this._listaNegociacoes);
         this._limpaFormulario();
     }
 
