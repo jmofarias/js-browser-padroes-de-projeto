@@ -18,7 +18,7 @@ class Negociacao {
         return this._quantidade * this._valor;
     }
 
-    // uma negociação após criada não pode ser alterada, aqui resolvemos isso colocando "_" para dizer ao programador que essas propriedades só podem ser usadas pelos métodos da própria classa, ninguém de fora deveria acessá-los, e criando os acessores get
+    // uma negociação após criada não pode ser alterada, aqui resolvemos isso colocando "_" para dizer ao programador que essas propriedades só podem ser usadas pelos métodos da própria classe, ninguém de fora deveria acessá-los, e criando os acessores get
 
     // método acessador
     get data() {

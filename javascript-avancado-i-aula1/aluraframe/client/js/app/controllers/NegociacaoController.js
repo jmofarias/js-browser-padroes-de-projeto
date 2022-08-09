@@ -16,6 +16,13 @@ class NegociacaoController {
 
         // pedindo para a view atualizar com os dados da listaNegociacoes
         this._negociacoesView.update(this._listaNegociacoes);
+
+        // instanciando a classe mensagem
+        this._mensagem = new Mensagem();
+        // instanciando MensagemView que vai receber onde eu quero incluir essa mensagem no meu HTML
+        this._mensagemView = new MensagemView($('#mesagemView'));
+        // pedindo para o mensagemView adicionar a mensagem  
+        this._mensagemView.update(this._mensagem);
     }
     
     adiciona(event) {
@@ -23,6 +30,11 @@ class NegociacaoController {
 
         // adiciona os dados preenchidos no formulário na minha lista de negociações
         this._listaNegociacoes.adiciona(this._criaNegociacao());
+
+        // assim que eu fizer uma adição a mensagem recebe esse texto 
+        this._mensagem.texto = 'Negociação adicionada com sucesso.'
+        this._mensagemView.update(this._mensagem);
+
         // quando o meu adiciona é chamado eu peço para a view mostrar o modelo
         this._negociacoesView.update(this._listaNegociacoes);
         this._limpaFormulario();
@@ -40,7 +52,7 @@ class NegociacaoController {
     }
 
     // coloquei o "_" para dizer que esse método só pode ser chamado pela própria classe NegociacaoController
-    // método para limpar meu formulário quando eu clicar no botão excluir
+    // método para limpar meu formulário quando eu clicar no botão incluir
     _limpaFormulario() {
         this._inputData.value = '';
         this._inputQuantidade.value = 1;
