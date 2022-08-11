@@ -1,13 +1,12 @@
-class NegociacoesView {
-    
-    // elemento será o conteúdo da div id=negociacoesView
+class NegociacoesView extends View {
+
     constructor(elemento) {
 
-        this._elemento = elemento;
+        super(elemento);
     }
-
+    
     // modelo onde vai está meu html que vai ser inserido no meu index.html
-    _template(model) {
+    template(model) {
 
         // no tbody eu construo dinamicamente tr's com base em cada negociacao do meu listaNegociacoes que será recebido pelo paramêtro model
         // ainda no tbody eu percorro a lista de negociacoes e crio um novo array com uma string com os dados da negociacao
@@ -48,14 +47,5 @@ class NegociacoesView {
 
         </table>
         `;
-    }
-
-    // vai atualizar minha div inserindo meu template
-    // model vai ser os meus dados
-    update(model) {
-
-        // pegando a minha div e retornando o meu método template() que vai está com o conteúdo do html
-        // .innerHTML: vai converter a minha string do template() em um elemento do DOM e vai ser inserido como filho da minha div
-        this._elemento.innerHTML = this._template(model);
     }
 }

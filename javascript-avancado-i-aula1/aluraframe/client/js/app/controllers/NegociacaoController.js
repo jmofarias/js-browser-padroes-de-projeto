@@ -20,7 +20,7 @@ class NegociacaoController {
         // instanciando a classe mensagem
         this._mensagem = new Mensagem();
         // instanciando MensagemView que vai receber onde eu quero incluir essa mensagem no meu HTML
-        this._mensagemView = new MensagemView($('#mesagemView'));
+        this._mensagemView = new MensagemView($('#mensagemView'));
         // pedindo para o mensagemView adicionar a mensagem  
         this._mensagemView.update(this._mensagem);
     }
